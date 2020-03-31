@@ -3,8 +3,14 @@ import { getMenuItems } from "../../menuService";
 
 class Sidebar extends Component {
   state = {
-    menuitems: getMenuItems()
+    menuItems: []
   };
+
+  componentDidMount() {
+    this.setState({
+      menuItems: getMenuItems()
+    });
+  }
 
   handleClick = item => {
     console.log(item._id);
@@ -14,7 +20,7 @@ class Sidebar extends Component {
       <div className="sidebar">
         <div className="menu-wrapper">
           <ul className="sidebar-menu">
-            {this.state.menuitems.map(item => (
+            {this.state.menuItems.map(item => (
               <li key={item._id} className="sidebar-menu__item">
                 <a
                   onClick={() => this.handleClick(item)}
