@@ -1,0 +1,13 @@
+@font-link-size:17;
+@Link-main:#ffffff;
+@link-shadow:1px 1px 1px rgba(0,0,0,.1), 1px,1px,3px rgba(0,0,0,.1) inset;
+
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: .setFontSizeRem(@rf-size, @font-link-size)[@result];
+  transition: background-color .3s 0s, border-color .3s 0s, color .3s 0s;
+  animation-timing-function: cubic-bezier(@animation-timing);
+}

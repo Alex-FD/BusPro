@@ -1,0 +1,11 @@
+.info__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  text-align: center;
+  flex: 0 1 540px;
+  margin: 8px;
+  box-shadow: 1px 1px 0 rgba(60, 75, 100, 0.14), 0 2px 1px -1px rgba(60, 75, 100, 0.12), 0 1px 3px 0 rgba(60, 75, 100, 0.12);
+}
+/*# sourceMappingURL=_index.css.map */

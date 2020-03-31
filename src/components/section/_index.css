@@ -1,0 +1,13 @@
+.section {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0;
+}
+.section__element {
+  position: relative;
+}
+.section__element_full {
+  width: 100%;
+}
+/*# sourceMappingURL=_index.css.map */

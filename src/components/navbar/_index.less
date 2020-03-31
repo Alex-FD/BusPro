@@ -1,0 +1,44 @@
+@nav-font-size:18px;
+
+.navbar {
+  width: 100%;
+  z-index: @z-index;
+  height: auto;
+
+  &__center {
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1260px;
+    padding: 20px 0;
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+
+    &_jumbotron {
+      margin: 0 auto;
+      max-width: 1260px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    &_navigation {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+  }
+
+  &_sticky {
+    position: fixed;
+  }
+  &_top {
+    top: 0;
+    left: 0;
+  }
+}

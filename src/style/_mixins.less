@@ -1,0 +1,14 @@
+.setFontSizeRem(@base, @size){
+  @sizeRem: 0;
+  @r: @base / (@base * 0 + 1);
+  @result: (@size / @r * 1rem);
+}
+.border-radius(@radius:3px){
+  border-radius: @radius;
+}
+.flex-card(@w, @coefficient){
+  @result: (@w * (@coefficient / 100));
+}
+.border-radii(@top-l:3px, @top-r:3px, @bottom-r:3px, @bottom-l:3px){
+  border-radius: @top-l @top-r @bottom-r @bottom-l;
+}

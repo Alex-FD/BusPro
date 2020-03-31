@@ -1,0 +1,225 @@
+@container-width:1220px;
+@card-height:300px;
+
+.footer {
+  display: block;
+  width: 100%;
+  padding: 50px 0 0 0;
+  text-align: center;
+  background-color: #212122;
+
+  &__sub-footer {
+    display: block;
+    margin-top: 50px;
+    width: 100%;
+    padding: 30px 0;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .setFontSizeRem(@rf-size, 13)[@result];
+
+    & > .main__inner_footer {
+      max-width: 1260px;
+      padding: 0 30px;
+    }
+
+    & .header__row {
+      border-top: 1px solid rgba(204,204,204, .4);
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    height: @card-height;
+    align-self: stretch;
+    padding: 10px;
+    justify-content: center;
+    color: #cccccc;
+
+    &_col {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    &_wide-25 {
+      flex: 0 1 .flex-card(@container-width ,25)[@result];
+      justify-content: flex-end;
+    }
+
+    &_wide-65 {
+      flex: 0 1 .flex-card(@container-width , 65)[@result];
+      justify-content: flex-end;
+    }
+
+    &_wide-10 {
+      flex: 0 1 .flex-card(@container-width, 10)[@result];
+      justify-content: flex-end;
+
+      & .header__row {
+        text-align: center;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    font-size: .setFontSizeRem(@rf-size, 17)[@result];
+    transition: color .3s.0s;
+    animation-timing-function: cubic-bezier(@animation-timing);
+
+    &_heading {
+      margin: 5px 0 0;
+      font-weight: 600;
+      font-size: .setFontSizeRem(@rf-size, 17)[@result];
+      line-height: 1.2;
+    }
+
+    &.link {
+      margin: 5px 0;
+      line-height: 2;
+      color: rgba(204,204,204, .8);
+
+      &:hover {
+        color: #ffffff;
+      }
+
+      &:active {
+        color: #ffffff;
+      }
+    }
+
+    &_copyright {
+      position: absolute;
+      display: inline-block;
+      margin-left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 500;
+      font-size: .setFontSizeRem(@rf-size,13)[@result];
+      & .sidebar-menu__icon {
+        top: 0;
+        margin-right: 0;
+      }
+    }
+
+    &_left {
+      height: inherit;
+      margin-left: 200px;
+      line-height: 50px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display:block;
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 240px;
+    height: 44px;
+    padding: 0;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    .border-radius(3px);
+    vertical-align: bottom;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    font-size: .setFontSizeRem(@rf-size, 17)[@result];
+    transition: background-color .3s 0s, border-color .3s 0s;
+    animation-timing-function: cubic-bezier(@animation-timing);
+
+    &:hover {
+      border-color: #e23b3b;
+      background-color: #e23b3b;
+    }
+  }
+
+  & .header__row {
+    padding: 8px 0;
+  }
+
+  &__link {
+    margin: 5px 0 10px;
+    color: #e23b3b;
+    line-height: 1.2;
+    font-size: .setFontSizeRem(@rf-size, 17)[@result];
+    text-decoration: none;
+
+    &_feedback {
+      font-weight: 400;
+    }
+  }
+}
+
+.bring-me-back {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  float: right;
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  .border-radius(100%);
+  background-color: #e23b3b;
+  font-size: .setFontSizeRem(@rf-size, 17)[@result];
+  transition: background-color .3s 0s, transform .3s 0s;
+  animation-timing-function: cubic-bezier(@animation-timing);
+
+  & svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translateX(-50%) translateY(-50%);
+    fill: #ffffff;
+    opacity: .5;
+    transition: opacity .3s 0s;
+    animation-timing-function: cubic-bezier(@animation-timing);
+  }
+
+  &:before {
+    content: "вернуться наверх";
+    position: absolute;
+    z-index: @z-index / 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 24px;
+    padding: 0 8px 0 8px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: .setFontSizeRem(@rf-size, 12)[@result];
+    line-height: 24px;
+    .border-radius(3px);
+    background-color: rgba(60,64,67,.9);
+    opacity: 0;
+    overflow: visible;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity .3s 0s, transform .3s.0s;
+    animation-timing-function: cubic-bezier(@animation-timing);
+  }
+
+  &:hover {
+    &:before {
+      transform: translateX(-50%) translateY(-120%);
+      opacity: 1;
+    }
+
+    & svg {
+      opacity: 1;
+    }
+  }
+}
