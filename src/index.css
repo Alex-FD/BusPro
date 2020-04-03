@@ -186,6 +186,9 @@ body {
   transition: color 0.3s 0s;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+.sidebar-menu__counter_active {
+  color: #070707;
+}
 .sidebar-menu__btn:after {
   position: absolute;
   top: 0;
@@ -346,7 +349,7 @@ body {
   border: 0;
   font-family: Roboto, sans-serif;
   background-color: #f7fafb;
-  opacity: 1;
+  opacity: 0.3;
   border-radius: 5px;
   color: #222222;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);

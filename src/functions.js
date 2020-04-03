@@ -1,5 +1,6 @@
 import imageService from "./iconService";
 import React from "react";
+import diagram from "./style/images/images/diagram.png";
 
 window.addEventListener("load", setLocalStorageItems);
 document.addEventListener("click", closeSubMenu);
@@ -216,3 +217,26 @@ function openSidebarMenu() {
 //   </li>
 // </ul>
 // </li>
+
+/*Crad*/
+// <div className="info__card">
+//   <div className="card__row card__row_top">
+//     <div className="section__image">
+//       <img src={diagram} className="section__icon" />
+//     </div>
+//     <div className="section__tile">
+//       <div className="section__text section__text_tile">
+//         <p>Структура УОБП</p>
+//       </div>
+//     </div>
+//   </div>
+//   <div className="card__row">
+//     <ul className="info__feature-list">
+//       <li className="info__feature">Команда управления</li>
+//       <li className="info__feature">
+//         Основные цели и задачи управления
+//       </li>
+//       <li className="info__feature">Контакты</li>
+//     </ul>
+//   </div>
+// </div></div>

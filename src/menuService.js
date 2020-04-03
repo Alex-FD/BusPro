@@ -1,4 +1,5 @@
-import imageService from "./iconService";
+import iconService from "./iconService";
+import imageService from "./imageService";
 
 const menuItems = [
   {
@@ -58,7 +59,8 @@ const menuItems = [
         }
       }
     ],
-    imgSrc: imageService.chartNetwork
+    imgSrc: iconService.chartNetwork,
+    active: false
   },
   {
     _id: "16aaeae8-f058-422b-8a11-9c8d9f09d5b5",
@@ -112,7 +114,8 @@ const menuItems = [
         }
       }
     ],
-    imgSrc: imageService.balanceScaleLeft
+    imgSrc: iconService.balanceScaleLeft,
+    active: false
   },
   {
     _id: "2675be1b-f34d-42e9-b1fc-1d40b97a3f2a",
@@ -153,7 +156,8 @@ const menuItems = [
         }
       }
     ],
-    imgSrc: imageService.batteryHalf
+    imgSrc: iconService.batteryHalf,
+    active: false
   },
   {
     _id: "9a50fb9a-c1bd-45df-a456-17272b1bad4a",
@@ -199,7 +203,8 @@ const menuItems = [
         }
       }
     ],
-    imgSrc: imageService.userGraduate
+    imgSrc: iconService.userGraduate,
+    active: false
   },
   {
     _id: "c53ecec6-16ed-4fc7-b08c-cf93602b8f76",
@@ -254,7 +259,8 @@ const menuItems = [
         }
       }
     ],
-    imgSrc: imageService.trophyAlt
+    imgSrc: iconService.trophyAlt,
+    active: false
   },
   {
     _id: "f249b1e9-e42a-4383-a1e2-ad2e1aa99e5b",
@@ -289,10 +295,18 @@ const menuItems = [
         }
       }
     ],
-    imgSrc: imageService.addressCard
+    imgSrc: iconService.addressCard,
+    active: false
   }
 ];
 
 export function getMenuItems() {
   return menuItems;
+}
+
+export function getInfoCards() {
+  return menuItems
+    .map(item => item.subMenuItems)
+    .flat(2)
+    .map(sub => sub.card);
 }
