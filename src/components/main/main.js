@@ -1,38 +1,47 @@
 import React, { Component } from "react";
 import Sidebar from "../sidebar/sidebar";
 import Card from "../card/card";
-import { getInfoCards, getMenuItems } from "../../menuService";
+import { getInfoCards, getMenuItems, getSubMenuItems } from "../../menuService";
 import InfoCard from "../infoCard/info";
 
 class Main extends Component {
   state = {
     menuItems: [],
-    selectedItemCards: []
+    selectedItemCards: [],
   };
 
   componentDidMount() {
     this.setState({
-      menuItems: getMenuItems()
+      menuItems: getMenuItems(),
     });
   }
 
-  handleItemSelect = item => {
-    const selectedCards = item.subMenuItems.flat(2).map(sub => sub.card);
+  handleItemSelect = (item) => {
+    const selectedCards = item.subMenuItems.flat(2).map((sub) => sub.card);
     this.setState({
       selectedItem: item,
-      selectedItemCards: selectedCards
+      selectedItemCards: selectedCards,
+      selectedSubItemCard: {},
     });
   };
 
-  handleClearingItemsClasses = item => {
+  handleSubItemSelect = (subItem) => {
+    const selectedSubItemCard = subItem.card;
+    this.setState({
+      selectedSubItem: subItem,
+      selectedSubItemCard: selectedSubItemCard,
+    });
+  };
+
+  handleClearingItemsClasses = (item) => {
     this.state.menuItems
-      .filter(i => i._id !== item._id)
-      .forEach(item => {
+      .filter((i) => i._id !== item._id)
+      .forEach((item) => {
         item.active = false;
       });
   };
 
-  handleItemAttr = item => {
+  handleItemAttr = (item) => {
     item.active = !item.active;
   };
 
@@ -46,8 +55,9 @@ class Main extends Component {
                 <Sidebar
                   items={this.state.menuItems}
                   selectedItem={this.state.selectedItem}
-                  selectedItemCards={this.state.selectedItemCards}
+                  selectedSubItem={this.state.selectedSubItem}
                   onItemSelect={this.handleItemSelect}
+                  onSubItemSelect={this.handleSubItemSelect}
                   onItemAttrToggle={this.handleItemAttr}
                   onClearClasses={this.handleClearingItemsClasses}
                 />
@@ -57,6 +67,8 @@ class Main extends Component {
               <InfoCard
                 items={this.state.menuItems}
                 selectedItem={this.state.selectedItem}
+                selectedSubItem={this.state.selectedSubItem}
+                selectedSubItemCard={this.state.selectedSubItemCard}
                 selectedCards={this.state.selectedItemCards}
               />
               {/*<Card onHideintroCards={this.handleHidingIntroCards} />*/}

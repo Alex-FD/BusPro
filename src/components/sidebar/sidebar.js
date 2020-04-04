@@ -6,14 +6,15 @@ class Sidebar extends Component {
       items,
       onItemSelect,
       selectedItem,
+      selectedSubItem,
       onItemAttrToggle,
       onClearClasses,
-      selectedItemCards
+      onSubItemSelect,
     } = this.props;
 
     return (
       <ul className="sidebar-menu">
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item._id} className="sidebar-menu__item">
             <a
               onClick={() => {
@@ -61,9 +62,19 @@ class Sidebar extends Component {
                   : "sub-menu"
               }
             >
-              {item.subMenuItems.map(subItem => (
+              {item.subMenuItems.map((subItem) => (
                 <li key={subItem._id} className="sub-menu__item">
-                  <a className="sub-menu__link" active={subItem.active}>
+                  <a
+                    onClick={() => {
+                      onSubItemSelect(subItem);
+                    }}
+                    className={
+                      subItem === selectedSubItem
+                        ? "sub-menu__link sub-menu__link_active"
+                        : "sub-menu__link"
+                    }
+                    active={subItem.active}
+                  >
                     {subItem.title}
                   </a>
                 </li>
