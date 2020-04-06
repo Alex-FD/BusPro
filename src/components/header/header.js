@@ -1,6 +1,18 @@
 import React, { Component } from "react";
+import Navbar from "../navbar/navbar";
+import { getMenuItems } from "../../menuService";
 
 class Header extends Component {
+  state = {
+    menuItems: [],
+    selectedItemCards: [],
+  };
+
+  componentDidMount() {
+    this.setState({
+      menuItems: getMenuItems(),
+    });
+  }
   render() {
     return (
       <header className="header">
@@ -28,135 +40,7 @@ class Header extends Component {
           <nav className="navbar navbar_top">
             <div className="menu">
               <div className="navbar__center navbar__center_navigation">
-                <ul className="tabs-menu tabs-menu_left tabs-menu_size-l">
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__item menu__item_has-sub">
-                      Главная
-                      <span className="menu__verbar">&nbsp;|&nbsp;</span>
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Моделирование БП</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Оптимизация БП</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Оценка зрелости БП</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Обучение</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">События и достижения</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">О нас</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__item menu__item_has-sub">
-                      Моделирование БП
-                      <span className="menu__verbar">&nbsp;|&nbsp;</span>
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Business Studio</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Методология</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Каталог процессов</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__item menu__item_has-sub">
-                      Оптимизация БП
-                      <span className="menu__verbar">&nbsp;|&nbsp;</span>
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">
-                          Инструменты оптимизации БП
-                        </a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">
-                          Мониторинг работ оптимизации БП
-                        </a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">
-                          Портфель проектов по оптимизации БП
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__item menu__item_has-sub">
-                      Оценка зрелости БП
-                      <span className="menu__verbar">&nbsp;|&nbsp;</span>
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Методология</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Оценка зрелости БП</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__item menu__item_has-sub">
-                      Обучение
-                      <span className="menu__verbar">&nbsp;|&nbsp;</span>
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Полезно почитать</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Программа обучения</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Статистика по обучению</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__item menu__item_has-sub">
-                      События и достижения
-                      <span className="menu__verbar">&nbsp;|&nbsp;</span>
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Новости</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Конкурсы</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Аллея славы</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="tabs-menu__tab menu__item">
-                    <a className="link menu__link menu__link_noverbar menu__item menu__item_has-sub">
-                      О нас
-                    </a>
-                    <ul className="menu__sub-menu menu__sub-menu_open">
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Структура УОБП</a>
-                      </li>
-                      <li className="menu__sub-item">
-                        <a className="menu__sub-link">Аналитик БП</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <Navbar items={this.state.menuItems} />
               </div>
             </div>
           </nav>

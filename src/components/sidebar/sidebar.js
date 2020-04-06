@@ -8,6 +8,7 @@ class Sidebar extends Component {
       selectedItem,
       selectedSubItem,
       onItemAttrToggle,
+      onSubItemAttrToggle,
       onClearClasses,
       onSubItemSelect,
     } = this.props;
@@ -22,14 +23,14 @@ class Sidebar extends Component {
                 onItemAttrToggle(item);
                 onClearClasses(item);
               }}
-              active={item.active}
+              active={item.active.toString()}
               className={
                 item.active === true && item === selectedItem
                   ? "sidebar-menu__link sidebar-menu__link_active" //item === selectedItem ? "sidebar-menu__link sidebar-menu__link_active":"sidebar-menu__link sidebar-menu__link" не срабатывает при повторном клике
                   : "sidebar-menu__link"
               }
             >
-              {item.title}
+              {item.domain}
               <span
                 className={
                   item.active === true && item === selectedItem
@@ -67,13 +68,14 @@ class Sidebar extends Component {
                   <a
                     onClick={() => {
                       onSubItemSelect(subItem);
+                      onSubItemAttrToggle(subItem);
                     }}
                     className={
                       subItem === selectedSubItem
                         ? "sub-menu__link sub-menu__link_active"
                         : "sub-menu__link"
                     }
-                    active={subItem.active}
+                    active={subItem.active.toString()}
                   >
                     {subItem.title}
                   </a>

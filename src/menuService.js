@@ -1,15 +1,16 @@
 import iconService from "./iconService";
 import imageService from "./imageService";
-import { text } from "@fortawesome/fontawesome-svg-core";
 
 const menuItems = [
   {
     _id: "ddd1d176-3956-4af8-8b06-58eed8f43e23",
-    title: "Моделирование БП",
+    domain: "Моделирование БП",
     subMenuItems: [
       {
         _id: "0362a1ba-9200-4fb0-a5d1-432da29fa95c",
         title: "Business Studio",
+        active: false,
+
         card: {
           _id: "2df0fa5f-007a-4fcc-89bc-beb75386ef57",
           domain: "Моделирование БП",
@@ -35,6 +36,8 @@ const menuItems = [
       {
         _id: "88263654-128e-4a4f-a714-4ef873ae7aa0",
         title: "Методология",
+        active: false,
+
         card: {
           _id: "363200b8-5188-43a5-88f6-917405251914",
           domain: "Моделирование БП",
@@ -76,6 +79,8 @@ const menuItems = [
       {
         _id: "da64e5a4-af05-48e0-bd1c-c6af24168a18",
         title: "Каталог процессов",
+        active: false,
+
         card: {
           _id: "2d4aad9d-55bf-4c94-858d-b341cb4a71cb",
           domain: "Моделирование БП",
@@ -97,11 +102,13 @@ const menuItems = [
   },
   {
     _id: "16aaeae8-f058-422b-8a11-9c8d9f09d5b5",
-    title: "Оптимизация БП",
+    domain: "Оптимизация БП",
     subMenuItems: [
       {
         _id: "5af278d6-1352-476a-a422-23cc2e569bf2",
         title: "Инструменты потимизации БП",
+        active: false,
+
         card: {
           _id: "dfb01d89-91bf-47da-9121-e55be9277d2b",
           domain: "Оптимизация БП",
@@ -139,6 +146,8 @@ const menuItems = [
       {
         _id: "a19a5c4d-54fe-417c-9cf1-111d1d80573a",
         title: "Мониторинг работ оптимизации БП",
+        active: false,
+
         card: {
           _id: "c4f253c2-97b2-4fb9-991d-bcf427a53328",
           domain: "Оптимизация БП",
@@ -164,6 +173,8 @@ const menuItems = [
       {
         _id: "768114a8-8a43-4a9e-b09e-3ff5d1df9134",
         title: "Портфель проектов по оптимизации БП",
+        active: false,
+
         card: {
           _id: "818c37b1-fe1c-4cf8-b2b0-8e3e07a6acd1",
           domain: "Оптимизация БП",
@@ -184,11 +195,13 @@ const menuItems = [
   },
   {
     _id: "2675be1b-f34d-42e9-b1fc-1d40b97a3f2a",
-    title: "Оценка зрелости БП",
+    domain: "Оценка зрелости БП",
     subMenuItems: [
       {
         _id: "a0383db0-dfc1-493a-a71d-fdac9af8c19e",
         title: "Методология",
+        active: false,
+
         card: {
           _id: "9c5a13e9-864a-4fca-92e9-6e763ed5b122",
           domain: "Оценка зрелости БП",
@@ -218,6 +231,8 @@ const menuItems = [
       {
         _id: "4a5d3e84-54a4-4ef4-95c0-6f4d2810fc48",
         title: "Оценка зрелости БП",
+        active: false,
+
         card: {
           _id: "a97f50fd-0fda-4b80-a37b-086907dc140a",
           domain: "Оценка зрелости БП",
@@ -250,11 +265,13 @@ const menuItems = [
   },
   {
     _id: "9a50fb9a-c1bd-45df-a456-17272b1bad4a",
-    title: "Обучение",
+    domain: "Обучение",
     subMenuItems: [
       {
         _id: "7fc3bc5c-2530-40ad-8f93-c3d7ed5bd7ed",
         title: "Полезно почитать",
+        active: false,
+
         card: {
           _id: "89dc17d6-11c5-4fd7-8f53-012d6b4c4ec8",
           domain: "Обучение",
@@ -274,6 +291,8 @@ const menuItems = [
       {
         _id: "885407f2-5d97-465b-b5fc-134c2f1989ec",
         title: "Программа обучения",
+        active: false,
+
         card: {
           _id: "91072768-fcf4-4aec-ac0f-48fa52cc29d1",
           domain: "Обучение",
@@ -295,6 +314,8 @@ const menuItems = [
       {
         _id: "2f585906-03cf-4d06-a2c6-ed8464ae585c",
         title: "Статистика по обучению",
+        active: false,
+
         card: {
           _id: "e89575b6-0896-4ba1-ac48-e157727b4355",
           domain: "Обучение",
@@ -315,11 +336,13 @@ const menuItems = [
   },
   {
     _id: "c53ecec6-16ed-4fc7-b08c-cf93602b8f76",
-    title: "События и достижения",
+    domain: "События и достижения",
     subMenuItems: [
       {
         _id: "7566ec83-e903-44b1-b8fa-0167206dc8b5",
         title: "Конкурсы",
+        active: false,
+
         card: {
           _id: "ef746c90-b8cd-4909-bf92-e5dd8dee7951",
           domain: "События и достижения",
@@ -345,6 +368,8 @@ const menuItems = [
       {
         _id: "97084f14-e993-44e1-8b36-b3197dd3885a",
         title: "Новости",
+        active: false,
+
         card: {
           _id: "ba6be953-bb5e-4097-9942-1915b3bda828",
           domain: "События и достижения",
@@ -370,6 +395,8 @@ const menuItems = [
       {
         _id: "fd47eb9b-9197-47a7-bab3-e266daac0414",
         title: "Аллея славы",
+        active: false,
+
         card: {
           _id: "46a24b4f-a71e-48d9-ab29-d20ca8493752",
           domain: "События и достижения",
@@ -398,11 +425,13 @@ const menuItems = [
   },
   {
     _id: "f249b1e9-e42a-4383-a1e2-ad2e1aa99e5b",
-    title: "О нас",
+    domain: "О нас",
     subMenuItems: [
       {
         _id: "05eb2f4f-b751-4d8c-b064-493e6e7249fa",
         title: "Структура УОБП",
+        active: false,
+
         card: {
           _id: "af3545c6-9b5c-4eb7-ac0c-9c3cfe3c4a3c",
           domain: "О нас",
@@ -425,6 +454,8 @@ const menuItems = [
       {
         _id: "e1cbb70c-03c0-4611-b21d-9df8c68e2790",
         title: "Аналитик БП",
+        active: false,
+
         card: {
           _id: "5d298688-24b0-4df8-935c-ffc1a90b3a90",
           domain: "О нас",

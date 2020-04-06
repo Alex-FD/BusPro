@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../sidebar/sidebar";
 import Card from "../card/card";
-import { getInfoCards, getMenuItems, getSubMenuItems } from "../../menuService";
+import { getMenuItems } from "../../menuService";
 import InfoCard from "../infoCard/info";
 
 class Main extends Component {
@@ -40,9 +40,19 @@ class Main extends Component {
         item.active = false;
       });
   };
+  // handleClearingSubItemsClasses = (subItem) => {
+  //   this.state.menuItems
+  //       .filter((i) => i._id !== subItem._id)
+  //       .forEach((item) => {
+  //         item.active = false;
+  //       });
+  // };
 
   handleItemAttr = (item) => {
     item.active = !item.active;
+  };
+  handleSubItemAttr = (subItem) => {
+    subItem.active = !subItem.active;
   };
 
   render() {
@@ -59,6 +69,7 @@ class Main extends Component {
                   onItemSelect={this.handleItemSelect}
                   onSubItemSelect={this.handleSubItemSelect}
                   onItemAttrToggle={this.handleItemAttr}
+                  onSubItemAttrToggle={this.handleSubItemAttr}
                   onClearClasses={this.handleClearingItemsClasses}
                 />
               </div>
