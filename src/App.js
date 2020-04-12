@@ -6,11 +6,11 @@ import Footer from "./components/footer/footer";
 
 function App() {
   return (
-    <div className="page">
+    <React.Fragment>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 

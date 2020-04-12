@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar";
 import Card from "../card/card";
 import { getMenuItems } from "../../menuService";
@@ -75,13 +76,14 @@ class Main extends Component {
               </div>
             </div>
             <div className="section__element section__element_full">
-              <InfoCard
-                items={this.state.menuItems}
-                selectedItem={this.state.selectedItem}
-                selectedSubItem={this.state.selectedSubItem}
-                selectedSubItemCard={this.state.selectedSubItemCard}
-                selectedCards={this.state.selectedItemCards}
-              />
+              <Route path="/biz_model" component={Card}></Route>
+              {/*<InfoCard*/}
+              {/*  items={this.state.menuItems}*/}
+              {/*  selectedItem={this.state.selectedItem}*/}
+              {/*  selectedSubItem={this.state.selectedSubItem}*/}
+              {/*  selectedSubItemCard={this.state.selectedSubItemCard}*/}
+              {/*  selectedCards={this.state.selectedItemCards}*/}
+              {/*/>*/}
               {/*<Card onHideintroCards={this.handleHidingIntroCards} />*/}
             </div>
           </div>

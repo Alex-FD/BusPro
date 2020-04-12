@@ -8,6 +8,7 @@ class InfoCard extends Component {
       <React.Fragment>
         {selectedCards.map((c) => (
           <div
+            key={c._id}
             className={
               selectedSubItemCard._id === c._id
                 ? "info__card info__card_active"

@@ -36,21 +36,21 @@ class Header extends Component {
                 <button className="header__button"></button>
               </div>
             </div>
-          </div>
-          <nav className="navbar navbar_top">
-            <div className="menu">
-              <div className="navbar__center navbar__center_navigation">
-                <Navbar items={this.state.menuItems} />
+            <nav className="navbar navbar_top">
+              <div className="menu">
+                <div className="navbar__center navbar__center_navigation">
+                  <Navbar items={this.state.menuItems} />
+                </div>
               </div>
+            </nav>
+            <div className="header__row header__row_scroll-down">
+              <div className="header__scroll-down">
+                <div className="header__chevron"></div>
+                <div className="header__chevron"></div>
+                <div className="header__chevron"></div>
+              </div>
+              <span className="header__scroll-text">вниз</span>
             </div>
-          </nav>
-          <div className="header__row header__row-scroll-down">
-            <div className="header__scroll-down">
-              <div className="header__chevron"></div>
-              <div className="header__chevron"></div>
-              <div className="header__chevron"></div>
-            </div>
-            <span className="header__scroll-text">вниз</span>
           </div>
         </div>
       </header>
