@@ -9,7 +9,7 @@ class Card extends Component {
     return this.state.menuitems.map((item) => (
       <div className="info__card info__card_intro">
         <figcaption className="info__caption">
-          <h2 className="info__heading">{item.title}</h2>
+          <h2 className="info__heading">{item.domain}</h2>
           <div className="section__image">
             <img src={item.imgSrc} className="section__icon" />
           </div>

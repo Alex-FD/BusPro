@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Sidebar extends Component {
   render() {
@@ -17,7 +19,8 @@ class Sidebar extends Component {
       <ul className="sidebar-menu">
         {items.map((item) => (
           <li key={item._id} className="sidebar-menu__item">
-            <a
+            <NavLink
+              to={`/${item.subMenuItems[0].card.domain}`}
               onClick={() => {
                 onItemSelect(item);
                 onItemAttrToggle(item);
@@ -26,7 +29,7 @@ class Sidebar extends Component {
               active={item.active.toString()}
               className={
                 item.active === true && item === selectedItem
-                  ? "sidebar-menu__link sidebar-menu__link_active" //item === selectedItem ? "sidebar-menu__link sidebar-menu__link_active":"sidebar-menu__link sidebar-menu__link" не срабатывает при повторном клике
+                  ? "sidebar-menu__link sidebar-menu__link_active"
                   : "sidebar-menu__link"
               }
             >
@@ -55,7 +58,7 @@ class Sidebar extends Component {
                     : "sidebar-menu__btn sidebar-menu__btn_open"
                 }
               />
-            </a>
+            </NavLink>
             <ul
               className={
                 item.active === true && item === selectedItem
