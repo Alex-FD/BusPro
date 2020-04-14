@@ -1,3 +1,7 @@
+@import (reference) "../../style/_variables";
+@import (reference) "../../style/_mixins";
+@import (reference) "../../style/_colors";
+
 @nav-font-size:18px;
 
 .navbar {
@@ -11,7 +15,6 @@
     max-width: 1260px;
     padding: 20px 0;
     background-color: transparent;
-
     &:before,
     &:after {
       content: "";
@@ -20,14 +23,12 @@
     &:after {
       clear: both;
     }
-
     &_jumbotron {
       margin: 0 auto;
       max-width: 1260px;
       justify-content: center;
       align-items: flex-start;
     }
-
     &_navigation {
       max-width: 1260px;
       margin: 0 auto;
@@ -37,6 +38,7 @@
   &_sticky {
     position: fixed;
   }
+
   &_top {
     top: 0;
     left: 0;

@@ -1,16 +1,8 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar";
-import Card from "../card/card";
-import { getMenuItems } from "../../menuService";
 import InfoCard from "../infoCard/info";
-import Home from "../home";
-import Modelling from "../modelling";
-import Optimize from "../optimize";
-import Maturity from "../maturity";
-import Teaching from "../teaching";
-import Events from "../events";
-import About from "../about";
+import { getMenuItems } from "../../menuService";
+import Card from "../card/card";
 
 class Main extends Component {
   state = {
@@ -56,6 +48,13 @@ class Main extends Component {
   //       });
   // };
 
+  handleCardsVisibility = () => {
+    const cards = Array.from(
+      document.getElementsByClassName("info__card_intro")
+    );
+    cards.forEach((c) => (c.style.display = "none"));
+  };
+
   handleItemAttr = (item) => {
     item.active = !item.active;
   };
@@ -79,22 +78,11 @@ class Main extends Component {
                   onItemAttrToggle={this.handleItemAttr}
                   onSubItemAttrToggle={this.handleSubItemAttr}
                   onClearClasses={this.handleClearingItemsClasses}
+                  onCardVisibility={this.handleCardsVisibility}
                 />
               </div>
             </div>
             <div className="section__element section__element_full">
-              {/*<Switch>*/}
-              {/*  <Route path="/home" component={Home} />*/}
-              {/*  <Route path="/modelling">component={Modelling}</Route>*/}
-              {/*  <Route path="/optimize" component={Optimize} />*/}
-              {/*  <Route path="/maturity" component={Maturity} />*/}
-              {/*  <Route path="/teaching" component={Teaching} />*/}
-              {/*  <Route path="/events" component={Events} />*/}
-              {/*  <Route path="/about" component={About} />*/}
-              {/*  <Route path="/" component={Home} />*/}
-              {/*  <Redirect to="/not found" />*/}
-              {/*</Switch>*/}
-
               <InfoCard
                 items={this.state.menuItems}
                 selectedItem={this.state.selectedItem}
@@ -102,6 +90,7 @@ class Main extends Component {
                 selectedSubItemCard={this.state.selectedSubItemCard}
                 selectedCards={this.state.selectedItemCards}
               />
+              <Card items={this.state.menuItems} />
             </div>
           </div>
         </section>

@@ -1,3 +1,6 @@
+@import (reference) "../../style/_variables";
+@import (reference) "../../style/_mixins";
+@import (reference) "../../style/_colors";
 
 @box-shadow:0 5px 15px -10px #00599c29;
 @pict-bg-color:#dbdbdb;
@@ -7,17 +10,14 @@
 @box-shadow-text:0 5px 15px -10px #00599c29;
 @box-shadow-pict:0 0 3px -1px #6e7b81cc;
 
-
 .section {
   display: block;
   height: 100%;
   width: 100%;
   padding: 50px 0;
 
-
   &__element {
     position: relative;
-
     &_full {
       width: 100%;
     }
@@ -29,7 +29,6 @@
     box-shadow: @box-shadow-text;
     background-color: @text-bg-color;
     line-height: 2;
-
     &_tile {
       position: relative;
       float: right;
@@ -55,7 +54,6 @@
     }
   }
 
-
   &__text {
     font-size: .setFontSizeRem(@rf-size, 16) [@result];
   }
@@ -75,7 +73,6 @@
     animation-timing-function: cubic-bezier(@animation-timing);
     transition: opacity 0.38s 0.1s;
   }
-
 
   &__icon {
     position: absolute;

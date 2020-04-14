@@ -511,19 +511,19 @@ body {
 .info__icon:hover:nth-of-type(1) {
   background-color: #f9d1d4;
 }
-.info__icon:hover:nth-of-type(1) > svg.icon-heart path {
+.info__icon:hover:nth-of-type(1) > img.icon-heart path {
   fill: #e30613;
 }
 .info__icon:hover:nth-of-type(2) {
   background-color: #d5edfc;
 }
-.info__icon:hover:nth-of-type(2) > svg.icon-share path {
+.info__icon:hover:nth-of-type(2) > img.icon-share path {
   fill: #1da1f2;
 }
 .info__icon:hover:nth-of-type(3) {
   cursor: auto;
 }
-.info__icon:hover:nth-of-type(3) > svg.icon-eye path {
+.info__icon:hover:nth-of-type(3) > img.icon-eye path {
   fill: #070707;
 }
 .info__icon:hover:nth-of-type(3) > .info__count {
@@ -580,56 +580,6 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-}
-.header__scroll-down {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  width: 28px;
-  height: 58px;
-}
-.header__scroll-down:hover {
-  cursor: pointer;
-}
-.header__scroll-text {
-  display: block;
-  margin-top: 3px;
-  text-transform: uppercase;
-  font-size: 0.8125rem;
-  white-space: nowrap;
-  opacity: 0.25;
-  animation: pulse 2s linear alternate infinite;
-}
-.header__chevron {
-  position: absolute;
-  width: 28px;
-  height: 8px;
-  transform: scale3d(0.3, 0.3, 0.3);
-  opacity: 0;
-  animation: move 3s ease-out infinite 0s;
-}
-.header__chevron:after,
-.header__chevron:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 51%;
-  background-color: #ffffff;
-}
-.header__chevron:before {
-  left: 0;
-  transform: skew(0deg, 30deg);
-}
-.header__chevron:after {
-  right: 0;
-  transform: skew(0deg, -30deg);
-}
-.header__chevron:first-child {
-  animation: move 3s ease-out 1s infinite;
-}
-.header__chevron:nth-child(2) {
-  animation: move 3s ease-out 2s infinite;
 }
 .header__row {
   position: relative;
@@ -706,7 +656,7 @@ body {
   border: 0;
   outline: none;
   cursor: pointer;
-  border-radius: 0 30px 30px 0;
+  border-radius: 30px;
   transition: background-color 0.3s 0s;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -749,6 +699,85 @@ body {
 }
 .header__icon_x-small {
   width: 28px;
+}
+.jumbotron {
+  position: relative;
+  height: 100%;
+  padding: 50px 0;
+}
+.jumbotron_center {
+  color: #ffffff;
+  text-align: center;
+}
+.jumbotron_theme-ruga {
+  background-image: linear-gradient(270deg, #e30613, #5f2d87);
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.header__scroll-down {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 28px;
+  height: 58px;
+}
+.header__scroll-down:hover {
+  cursor: pointer;
+}
+.header__scroll-text {
+  display: block;
+  margin-top: 3px;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  opacity: 0.25;
+  animation: pulse 2s linear alternate infinite;
+}
+.header__chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  transform: scale3d(0.3, 0.3, 0.3);
+  opacity: 0;
+  animation: move 3s ease-out infinite 0s;
+}
+.header__chevron:after,
+.header__chevron:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background-color: #ffffff;
+}
+.header__chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+.header__chevron:after {
+  right: 0;
+  transform: skew(0deg, -30deg);
+}
+.header__chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+.header__chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+.header__row {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 16px 0;
+}
+.header__row_scroll-down {
+  position: absolute;
+  top: calc(100% - 120px);
 }
 @keyframes pulse {
   to {
@@ -800,18 +829,6 @@ body {
     opacity: 0;
     transform: translateY(55px) scale3d(0.1, 0.1, 0.1);
   }
-}
-.jumbotron {
-  position: relative;
-  height: 100%;
-  padding: 50px 0;
-}
-.jumbotron_center {
-  color: #ffffff;
-  text-align: center;
-}
-.jumbotron_theme-ruga {
-  background-image: linear-gradient(270deg, #e30613, #5f2d87);
 }
 .tabs-menu {
   position: relative;

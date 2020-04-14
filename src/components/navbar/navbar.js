@@ -2,40 +2,30 @@ import React, { Component } from "react";
 import { getMenuItems } from "../../menuService";
 
 class Navbar extends Component {
+  state = {
+    menuItems: [],
+    selectedItemCards: [],
+  };
+
+  componentDidMount() {
+    this.setState({
+      menuItems: getMenuItems(),
+    });
+  }
+
   render() {
     const {
       items,
       onItemSelect,
       selectedItem,
-      selectedSubItem,
       onItemAttrToggle,
+      onSubItemAttrToggle,
       onClearClasses,
       onSubItemSelect,
     } = this.props;
 
     return (
       <ul className={"tabs-menu tabs-menu_left tabs-menu_size-l"}>
-        <li className="tabs-menu__tab menu__item">
-          <a className="link menu__link menu__item menu__item_has-sub">
-            Главная <span className="menu__verbar">&nbsp;|&nbsp;</span>
-          </a>
-          <ul className="menu__sub-menu">
-            {items.map((item) => (
-              <li key={item._id} className="menu__sub-item">
-                <a
-                  onClick={() => {
-                    onItemSelect(item);
-                    onItemAttrToggle(item);
-                  }}
-                  active={item.active.toString()}
-                  className="menu__sub-link"
-                >
-                  {item.domain}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
         {items.map((item) => (
           <li key={item._id} className="tabs-menu__tab menu__item">
             <a
@@ -45,17 +35,28 @@ class Navbar extends Component {
                 onClearClasses(item);
               }}
               active={item.active.toString()}
-              className="link menu__link menu__item menu__item_has-sub"
+              className={
+                item.active === true && item === selectedItem
+                  ? "link menu__link menu__item menu__item_has-sub menu__sub-menu_open"
+                  : "link menu__link menu__item menu__item_has-sub"
+              }
             >
               {item.domain}
               <span className="menu__verbar">&nbsp;|&nbsp;</span>
             </a>
-            <ul className="menu__sub-menu">
+            <ul
+              className={
+                item.active === true && item === selectedItem
+                  ? "menu__sub-menu menu__sub-menu_open"
+                  : "menu__sub-menu"
+              }
+            >
               {item.subMenuItems.map((subItem) => (
                 <li key={subItem._id} className="menu__sub-item">
                   <a
                     onClick={() => {
                       onSubItemSelect(subItem);
+                      onSubItemAttrToggle(subItem);
                     }}
                     className="menu__sub-link"
                     active={subItem.active.toString()}

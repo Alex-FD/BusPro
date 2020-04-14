@@ -1,3 +1,7 @@
+@import (reference) "../../style/_variables";
+@import (reference) "../../style/_mixins";
+@import (reference) "../../style/_colors";
+
 @container-width:1220px;
 @card-height:300px;
 
@@ -17,12 +21,10 @@
     text-transform: uppercase;
     font-weight: 400;
     font-size: .setFontSizeRem(@rf-size, 13)[@result];
-
     & > .main__inner_footer {
       max-width: 1260px;
       padding: 0 30px;
     }
-
     & .header__row {
       border-top: 1px solid rgba(204,204,204, .4);
     }
@@ -36,26 +38,21 @@
     padding: 10px;
     justify-content: center;
     color: #cccccc;
-
     &_col {
       flex-direction: column;
       text-align: left;
     }
-
     &_wide-25 {
       flex: 0 1 .flex-card(@container-width ,25)[@result];
       justify-content: flex-end;
     }
-
     &_wide-65 {
       flex: 0 1 .flex-card(@container-width , 65)[@result];
       justify-content: flex-end;
     }
-
     &_wide-10 {
       flex: 0 1 .flex-card(@container-width, 10)[@result];
       justify-content: flex-end;
-
       & .header__row {
         text-align: center;
       }
@@ -70,23 +67,19 @@
     font-size: .setFontSizeRem(@rf-size, 17)[@result];
     transition: color .3s.0s;
     animation-timing-function: cubic-bezier(@animation-timing);
-
     &_heading {
       margin: 5px 0 0;
       font-weight: 600;
       font-size: .setFontSizeRem(@rf-size, 17)[@result];
       line-height: 1.2;
     }
-
     &.link {
       margin: 5px 0;
       line-height: 2;
       color: rgba(204,204,204, .8);
-
       &:hover {
         color: #ffffff;
       }
-
       &:active {
         color: #ffffff;
       }
@@ -136,7 +129,6 @@
     font-size: .setFontSizeRem(@rf-size, 17)[@result];
     transition: background-color .3s 0s, border-color .3s 0s;
     animation-timing-function: cubic-bezier(@animation-timing);
-
     &:hover {
       border-color: #e23b3b;
       background-color: #e23b3b;
@@ -153,7 +145,6 @@
     line-height: 1.2;
     font-size: .setFontSizeRem(@rf-size, 17)[@result];
     text-decoration: none;
-
     &_feedback {
       font-weight: 400;
     }
@@ -175,7 +166,6 @@
   font-size: .setFontSizeRem(@rf-size, 17)[@result];
   transition: background-color .3s 0s, transform .3s 0s;
   animation-timing-function: cubic-bezier(@animation-timing);
-
   & svg {
     position: absolute;
     left: 50%;
@@ -188,7 +178,6 @@
     transition: opacity .3s 0s;
     animation-timing-function: cubic-bezier(@animation-timing);
   }
-
   &:before {
     content: "вернуться наверх";
     position: absolute;
@@ -211,13 +200,11 @@
     transition: opacity .3s 0s, transform .3s.0s;
     animation-timing-function: cubic-bezier(@animation-timing);
   }
-
   &:hover {
     &:before {
       transform: translateX(-50%) translateY(-120%);
       opacity: 1;
     }
-
     & svg {
       opacity: 1;
     }

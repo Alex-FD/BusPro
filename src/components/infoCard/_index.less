@@ -1,3 +1,7 @@
+@import (reference) "../../style/_variables";
+@import (reference) "../../style/_mixins";
+@import (reference) "../../style/_colors";
+
 @box-shadow-text:0 5px 15px -10px #00599c29;
 @text-bg-color:#f8fcff;
 @main-color:#222222;
@@ -22,7 +26,6 @@
     .border-radius(5px);
     color: @main-color;
     animation-timing-function: cubic-bezier(@animation-timing);
-
     &:hover {
       cursor: pointer;
     }
@@ -38,7 +41,6 @@
       opacity: 1;
       box-shadow: none;
       background-color: transparent;
-
       &:hover {
         & .info__caption:after {
           transform: translate3d(0, 0, 0);
@@ -46,21 +48,17 @@
           box-shadow: @box-shadow-caption;
           background-color: @caption-bg-color;
         }
-
         & .info__feature-list {
           transform: translate3d(0, 36px, 0);
           opacity: 1;
         }
-
         & .info__feature {
           &:nth-of-type(1) {
             transform: translateY(0);
           }
-
           &:nth-of-type(2) {
             transform: translateY(0);
           }
-
           &:nth-of-type(3) {
             transform: translateY(0);
           }
@@ -78,15 +76,12 @@
       color: @main-color;
       border: 1px solid #e30613;
       background-color: transparent;
-
       &:hover {
         cursor: pointer;
         background-color: #e30613;
-
         & .button__text {
           color: @main-color;
         }
-
         & .button__text:after {
           color: @main-color;
         }
@@ -102,7 +97,6 @@
     height: 100%;
     padding: 8px 16px;
     text-align: center;
-
     &:after {
       content: "";
       position: absolute;
@@ -121,7 +115,6 @@
       cursor: pointer;
       background-color: #dceaf4;
     }
-
     & .info__feature-list {
       transform: translate3d(0, calc(-100% + 36px),0);
       opacity: 0;
@@ -208,19 +201,19 @@
       cursor: pointer;
       &:nth-of-type(1){
         background-color: #f9d1d4;
-        & > svg.icon-heart path {
+        & > img.icon-heart path {
           fill:#e30613;
         }
       }
       &:nth-of-type(2){
         background-color: #d5edfc;
-        & > svg.icon-share path {
+        & > img.icon-share path {
           fill:#1da1f2;//fill:#25d366;
         }
       }
       &:nth-of-type(3){
         cursor: auto;
-        & > svg.icon-eye path {
+        & > img.icon-eye path {
           fill:#070707;//fill:#25d366;
         }
         & > .info__count {

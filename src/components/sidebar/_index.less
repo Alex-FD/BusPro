@@ -1,3 +1,9 @@
+@import (reference) "../../style/_variables";
+@import (reference) "../../style/_mixins";
+@import (reference) "../../style/_colors";
+
+
+
 .sidebar {
   float: left;
   width: 400px;
@@ -41,21 +47,16 @@
       line-height: 54px;
       content: '\2771';
       transition: all 0.3s 0s;
-
     }
-
     &_open {
       transition-delay: .15s;
-
       &:after {
         color: #8b8a89;
         transform: rotate(0);
       }
     }
-
     &_close {
       transition-delay: .15s;
-
       &:after {
         color: #070707;
         transform: rotate(90deg);
@@ -75,7 +76,6 @@
     transition: filter .3s 0s;
     animation-timing-function: cubic-bezier(@animation-timing);
     filter: invert(67%) sepia(13%) saturate(22%) hue-rotate(324deg) brightness(79%) contrast(92%);
-
     &_active {
       transition-delay: .15s;
       filter: invert(0) sepia(28%) saturate(826%) hue-rotate(350deg) brightness(94%) contrast(95%);
@@ -89,14 +89,11 @@
     padding: 0;
     transition: all .3s 0s;
     animation-timing-function: cubic-bezier(@animation-timing);
-
     &:hover {
       background-color: #d1d1d1;
-
       & .sidebar-menu__icon {
         filter: invert(0) sepia(28%) saturate(826%) hue-rotate(350deg) brightness(94%) contrast(95%);
       }
-
       & .sidebar-menu__btn {
         &:after {
           color: #070707;
@@ -129,7 +126,6 @@
     text-decoration: none;
     transition: all .3s 0s;
     animation-timing-function: cubic-bezier(@animation-timing);
-
     &:hover {
       color: #070707;
     }
@@ -177,7 +173,6 @@
     text-decoration: none;
     transition: all.3s 0s;
     animation-timing-function: cubic-bezier(@animation-timing);
-
     &:before {
       content: '';
       position: absolute;
@@ -189,7 +184,6 @@
       background-color: #93b8d3;
       transition: all .03s 0s;
     }
-
     &_active {
       transition-delay: .15s;
       background-color: #f7fafb;

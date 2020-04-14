@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Router } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 
 class Sidebar extends Component {
   render() {
@@ -13,18 +11,20 @@ class Sidebar extends Component {
       onSubItemAttrToggle,
       onClearClasses,
       onSubItemSelect,
+      onCardVisibility,
     } = this.props;
 
     return (
       <ul className="sidebar-menu">
         {items.map((item) => (
           <li key={item._id} className="sidebar-menu__item">
-            <NavLink
-              to={`/${item.subMenuItems[0].card.domain}`}
+            <a
+              // to={`/${item.subMenuItems[0].card.domain}`}
               onClick={() => {
                 onItemSelect(item);
                 onItemAttrToggle(item);
                 onClearClasses(item);
+                onCardVisibility();
               }}
               active={item.active.toString()}
               className={
@@ -58,7 +58,7 @@ class Sidebar extends Component {
                     : "sidebar-menu__btn sidebar-menu__btn_open"
                 }
               />
-            </NavLink>
+            </a>
             <ul
               className={
                 item.active === true && item === selectedItem
