@@ -41,7 +41,7 @@ class Navbar extends Component {
                   : "link menu__link menu__item menu__item_has-sub"
               }
             >
-              {item.domain}
+              {item.url}
               <span className="menu__verbar">&nbsp;|&nbsp;</span>
             </a>
             <ul

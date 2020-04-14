@@ -4,7 +4,7 @@ import imageService from "./imageService";
 const menuItems = [
   {
     _id: "ddd1d176-3956-4af8-8b06-58eed8f43e23",
-    domain: "Моделирование БП",
+    url: "Моделирование БП",
     subMenuItems: [
       {
         _id: "0362a1ba-9200-4fb0-a5d1-432da29fa95c",
@@ -13,7 +13,7 @@ const menuItems = [
 
         card: {
           _id: "2df0fa5f-007a-4fcc-89bc-beb75386ef57",
-          domain: "Modelling",
+          url: "Modelling",
           title: "Business Studio",
           imgSrc: imageService.money,
           active: false,
@@ -40,7 +40,7 @@ const menuItems = [
 
         card: {
           _id: "363200b8-5188-43a5-88f6-917405251914",
-          domain: "Modelling",
+          url: "Modelling",
           title: "Методология",
           imgSrc: imageService.framework,
           active: false,
@@ -83,7 +83,7 @@ const menuItems = [
 
         card: {
           _id: "2d4aad9d-55bf-4c94-858d-b341cb4a71cb",
-          domain: "Modelling",
+          url: "Modelling",
           title: "Каталог процессов",
           imgSrc: imageService.process,
           active: false,
@@ -102,7 +102,7 @@ const menuItems = [
   },
   {
     _id: "16aaeae8-f058-422b-8a11-9c8d9f09d5b5",
-    domain: "Оптимизация БП",
+    url: "Оптимизация БП",
     subMenuItems: [
       {
         _id: "5af278d6-1352-476a-a422-23cc2e569bf2",
@@ -111,7 +111,7 @@ const menuItems = [
 
         card: {
           _id: "dfb01d89-91bf-47da-9121-e55be9277d2b",
-          domain: "Optimize",
+          url: "Optimize",
           title: "Инструменты потимизации БП",
           imgSrc: imageService.optimization,
           active: false,
@@ -150,7 +150,7 @@ const menuItems = [
 
         card: {
           _id: "c4f253c2-97b2-4fb9-991d-bcf427a53328",
-          domain: "Optimize",
+          url: "Optimize",
           title: "Мониторинг работ оптимизации БП",
           imgSrc: imageService.cms,
           active: false,
@@ -177,7 +177,7 @@ const menuItems = [
 
         card: {
           _id: "818c37b1-fe1c-4cf8-b2b0-8e3e07a6acd1",
-          domain: "Optimize",
+          url: "Optimize",
           title: "Портфель проектов по оптимизации БП",
           imgSrc: imageService.dashboard,
           active: false,
@@ -195,7 +195,7 @@ const menuItems = [
   },
   {
     _id: "2675be1b-f34d-42e9-b1fc-1d40b97a3f2a",
-    domain: "Оценка зрелости БП",
+    url: "Оценка зрелости БП",
     subMenuItems: [
       {
         _id: "a0383db0-dfc1-493a-a71d-fdac9af8c19e",
@@ -204,7 +204,7 @@ const menuItems = [
 
         card: {
           _id: "9c5a13e9-864a-4fca-92e9-6e763ed5b122",
-          domain: "Maturity",
+          url: "Maturity",
           title: "Методология",
           imgSrc: imageService.framework,
           active: false,
@@ -235,7 +235,7 @@ const menuItems = [
 
         card: {
           _id: "a97f50fd-0fda-4b80-a37b-086907dc140a",
-          domain: "Maturity",
+          url: "Maturity",
           title: "Портфель работ по оценке зрелости",
           imgSrc: imageService.test,
           active: false,
@@ -265,7 +265,7 @@ const menuItems = [
   },
   {
     _id: "9a50fb9a-c1bd-45df-a456-17272b1bad4a",
-    domain: "Обучение",
+    url: "Обучение",
     subMenuItems: [
       {
         _id: "7fc3bc5c-2530-40ad-8f93-c3d7ed5bd7ed",
@@ -274,7 +274,7 @@ const menuItems = [
 
         card: {
           _id: "89dc17d6-11c5-4fd7-8f53-012d6b4c4ec8",
-          domain: "Teaching",
+          url: "Teaching",
           title: "Полезно почитать",
           imgSrc: imageService.book,
           active: false,
@@ -295,7 +295,7 @@ const menuItems = [
 
         card: {
           _id: "91072768-fcf4-4aec-ac0f-48fa52cc29d1",
-          domain: "Teaching",
+          url: "Teaching",
           title: "Программа обучения",
           imgSrc: imageService.course,
           active: false,
@@ -318,7 +318,7 @@ const menuItems = [
 
         card: {
           _id: "e89575b6-0896-4ba1-ac48-e157727b4355",
-          domain: "Teaching",
+          url: "Teaching",
           title: "Статистика по обучению",
           imgSrc: imageService.dashboard,
           active: false,
@@ -336,7 +336,7 @@ const menuItems = [
   },
   {
     _id: "c53ecec6-16ed-4fc7-b08c-cf93602b8f76",
-    domain: "События и достижения",
+    url: "События и достижения",
     subMenuItems: [
       {
         _id: "7566ec83-e903-44b1-b8fa-0167206dc8b5",
@@ -345,7 +345,7 @@ const menuItems = [
 
         card: {
           _id: "ef746c90-b8cd-4909-bf92-e5dd8dee7951",
-          domain: "Events",
+          url: "Events",
           title: "Конкурсы",
           imgSrc: imageService.bizfin,
           active: false,
@@ -372,7 +372,7 @@ const menuItems = [
 
         card: {
           _id: "ba6be953-bb5e-4097-9942-1915b3bda828",
-          domain: "Events",
+          url: "Events",
           title: "Новости",
           imgSrc: imageService.news,
           active: false,
@@ -399,7 +399,7 @@ const menuItems = [
 
         card: {
           _id: "46a24b4f-a71e-48d9-ab29-d20ca8493752",
-          domain: "Events",
+          url: "Events",
           title: "Аллея славы",
           imgSrc: imageService.podium,
           active: false,
@@ -425,7 +425,7 @@ const menuItems = [
   },
   {
     _id: "f249b1e9-e42a-4383-a1e2-ad2e1aa99e5b",
-    domain: "О нас",
+    url: "О нас",
     subMenuItems: [
       {
         _id: "05eb2f4f-b751-4d8c-b064-493e6e7249fa",
@@ -434,7 +434,7 @@ const menuItems = [
 
         card: {
           _id: "af3545c6-9b5c-4eb7-ac0c-9c3cfe3c4a3c",
-          domain: "About",
+          url: "About",
           title: "Структура УОБП",
           imgSrc: imageService.diagram,
           active: false,
@@ -458,7 +458,7 @@ const menuItems = [
 
         card: {
           _id: "5d298688-24b0-4df8-935c-ffc1a90b3a90",
-          domain: "About",
+          url: "About",
           title: "Аналитик БП",
           imgSrc: imageService.analytics,
           active: false,

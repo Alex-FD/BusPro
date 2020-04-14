@@ -9,7 +9,7 @@ class Card extends Component {
         {items.map((item) => (
           <div key={item._id} className="info__card info__card_intro">
             <figcaption className="info__caption">
-              <h2 className="info__heading">{item.domain}</h2>
+              <h2 className="info__heading">{item.url}</h2>
               <div className="section__image">
                 <img
                   src={item.imgSrc}

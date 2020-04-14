@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import imageService from "../../imageService";
 import iconService from "../../iconService";
+import TakeBack from "../takeBack/takeback";
 
 class Footer extends Component {
+  scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   render() {
     return (
       <footer className="footer">
@@ -38,19 +46,7 @@ class Footer extends Component {
               </div>
             </div>
             <div className="footer__card footer__card_col footer__card_wide-10">
-              <div className="header__row">
-                <a className="bring-me-back">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="26"
-                    viewBox="0 0 24 24"
-                  >
-                    <path fill="none" d="M0 0h24v24H0V0z"></path>
-                    <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path>
-                  </svg>
-                </a>
-              </div>
+              <TakeBack onScrollUpClick={this.scrollUp} />
             </div>
           </div>
         </div>

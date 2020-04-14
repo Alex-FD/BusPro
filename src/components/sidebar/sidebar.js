@@ -19,7 +19,7 @@ class Sidebar extends Component {
         {items.map((item) => (
           <li key={item._id} className="sidebar-menu__item">
             <a
-              // to={`/${item.subMenuItems[0].card.domain}`}
+              // to={`/${item.subMenuItems[0].card.url}`}
               onClick={() => {
                 onItemSelect(item);
                 onItemAttrToggle(item);
@@ -33,7 +33,7 @@ class Sidebar extends Component {
                   : "sidebar-menu__link"
               }
             >
-              {item.domain}
+              {item.url}
               <span
                 className={
                   item.active === true && item === selectedItem
@@ -45,6 +45,7 @@ class Sidebar extends Component {
               </span>
               <img
                 src={item.imgSrc}
+                alt={item.url}
                 className={
                   item.active === true && item === selectedItem
                     ? "sidebar-menu__icon sidebar-menu__icon_active"

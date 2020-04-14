@@ -3,6 +3,8 @@ import Sidebar from "../sidebar/sidebar";
 import InfoCard from "../infoCard/info";
 import { getMenuItems } from "../../menuService";
 import Card from "../card/card";
+import Footer from "../footer/footer";
+import Header from "../header/header";
 
 class Main extends Component {
   state = {
@@ -40,6 +42,7 @@ class Main extends Component {
         item.active = false;
       });
   };
+
   // handleClearingSubItemsClasses = (subItem) => {
   //   this.state.menuItems
   //       .filter((i) => i._id !== subItem._id)
@@ -58,43 +61,48 @@ class Main extends Component {
   handleItemAttr = (item) => {
     item.active = !item.active;
   };
+
   handleSubItemAttr = (subItem) => {
     subItem.active = !subItem.active;
   };
 
   render() {
     return (
-      <main className="main page">
-        <section className="section">
-          <div className="main__inner  group main__inner_info">
-            <div className="sidebar">
-              <div className="menu-wrapper">
-                <Sidebar
+      <React.Fragment>
+        <Header />
+        <main className="main page">
+          <section className="section">
+            <div className="main__inner  group main__inner_info">
+              <div className="sidebar">
+                <div className="menu-wrapper">
+                  <Sidebar
+                    items={this.state.menuItems}
+                    selectedItem={this.state.selectedItem}
+                    selectedSubItem={this.state.selectedSubItem}
+                    onItemSelect={this.handleItemSelect}
+                    onSubItemSelect={this.handleSubItemSelect}
+                    onItemAttrToggle={this.handleItemAttr}
+                    onSubItemAttrToggle={this.handleSubItemAttr}
+                    onClearClasses={this.handleClearingItemsClasses}
+                    onCardVisibility={this.handleCardsVisibility}
+                  />
+                </div>
+              </div>
+              <div className="section__element section__element_full">
+                <InfoCard
                   items={this.state.menuItems}
                   selectedItem={this.state.selectedItem}
                   selectedSubItem={this.state.selectedSubItem}
-                  onItemSelect={this.handleItemSelect}
-                  onSubItemSelect={this.handleSubItemSelect}
-                  onItemAttrToggle={this.handleItemAttr}
-                  onSubItemAttrToggle={this.handleSubItemAttr}
-                  onClearClasses={this.handleClearingItemsClasses}
-                  onCardVisibility={this.handleCardsVisibility}
+                  selectedSubItemCard={this.state.selectedSubItemCard}
+                  selectedCards={this.state.selectedItemCards}
                 />
+                <Card items={this.state.menuItems} />
               </div>
             </div>
-            <div className="section__element section__element_full">
-              <InfoCard
-                items={this.state.menuItems}
-                selectedItem={this.state.selectedItem}
-                selectedSubItem={this.state.selectedSubItem}
-                selectedSubItemCard={this.state.selectedSubItemCard}
-                selectedCards={this.state.selectedItemCards}
-              />
-              <Card items={this.state.menuItems} />
-            </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+        <Footer />
+      </React.Fragment>
     );
   }
 }
