@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../navbar/navbar";
-import { getMenuItems } from "../../menuService";
+import { getMenuItems } from "../../utils/menuService";
 import ScrollDown from "../scrollDown/scrolldown";
 
 class Header extends Component {

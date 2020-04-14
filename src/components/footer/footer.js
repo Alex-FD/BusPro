@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import imageService from "../../imageService";
-import iconService from "../../iconService";
+import imageService from "../../utils/imageService";
+import iconService from "../../utils/iconService";
 import TakeBack from "../takeBack/takeback";
 
 class Footer extends Component {

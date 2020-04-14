@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../sidebar/sidebar";
 import InfoCard from "../infoCard/info";
-import { getMenuItems } from "../../menuService";
+import { getMenuItems } from "../../utils/menuService";
 import Card from "../card/card";
 import Footer from "../footer/footer";
 import Header from "../header/header";
@@ -42,14 +42,6 @@ class Main extends Component {
         item.active = false;
       });
   };
-
-  // handleClearingSubItemsClasses = (subItem) => {
-  //   this.state.menuItems
-  //       .filter((i) => i._id !== subItem._id)
-  //       .forEach((item) => {
-  //         item.active = false;
-  //       });
-  // };
 
   handleCardsVisibility = () => {
     const cards = Array.from(

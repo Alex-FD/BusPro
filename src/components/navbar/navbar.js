@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getMenuItems } from "../../menuService";
+import { getMenuItems } from "../../utils/menuService";
 
 class Navbar extends Component {
   state = {
